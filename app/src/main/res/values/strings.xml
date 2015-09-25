@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GlazerProjectile</string>
+
+    <string name="angle">Angle</string>
+    <string name="velocity">Velocity</string>
+    <string name="time">Time</string>
+    <string name="calculateButton">Calculate</string>
+    <string name="y">y= </string>
+    <string name="x">x= </string>
+</resources>
