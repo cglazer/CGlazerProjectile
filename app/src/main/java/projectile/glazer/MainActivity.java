@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText angle;
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").into(imageView);
         button= (Button) findViewById(R.id.button1);
         angle= (EditText) findViewById(R.id.editText1);
         velocity= (EditText) findViewById(R.id.editText2);

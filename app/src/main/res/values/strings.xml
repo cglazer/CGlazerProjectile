@@ -7,4 +7,5 @@
     <string name="calculateButton">Calculate</string>
     <string name="y">y= </string>
     <string name="x">x= </string>
+    <string name="action_settings">action_settings</string>
 </resources>
