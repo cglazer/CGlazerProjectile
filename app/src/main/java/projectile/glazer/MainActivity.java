@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -25,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").into(imageView);
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        Picasso.with(this).load("https://1millionmonkeystyping.files.wordpress.com/2013/11/projectile-motion1.jpg").into(imageView);
         button= (Button) findViewById(R.id.button1);
         angle= (EditText) findViewById(R.id.editText1);
         velocity= (EditText) findViewById(R.id.editText2);
