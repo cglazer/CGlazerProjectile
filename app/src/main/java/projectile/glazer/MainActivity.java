@@ -1,5 +1,7 @@
 package projectile.glazer;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
         Picasso.with(this).load("https://1millionmonkeystyping.files.wordpress.com/2013/11/projectile-motion1.jpg").into(imageView);
         button= (Button) findViewById(R.id.button1);
@@ -34,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         time= (EditText) findViewById(R.id.editText3);
         resultY=(TextView) findViewById(R.id.text4);
         resultX=(TextView) findViewById(R.id.text5);
-
         button.setOnClickListener(new View.OnClickListener() {
                        @Override
                       public void onClick(View v) {
@@ -43,15 +46,18 @@ public class MainActivity extends AppCompatActivity {
                    });
     }
     public void calculate(){
-        double radians = Math.toRadians(Double.parseDouble(angle.getText().toString()));
+        Intent intent = new Intent(this, AnswerActivity.class);
+
         Double valueAngle = Double.parseDouble(angle.getText().toString());
         Double valueVelocity = Double.parseDouble(velocity.getText().toString());
         Double valueTime = Double.parseDouble(time.getText().toString());
-        double calculatedValueX=(Math.sin(radians)*valueTime*valueVelocity);
-        double calculatedValueY=(Math.cos(radians)*valueTime*valueVelocity-(.5*9.8*valueTime*valueTime));
-        resultY.setText(Double.toString(calculatedValueY));
-        resultX.setText(Double.toString(calculatedValueX));
-    }
+
+
+        intent.putExtra("ANGLE",  valueAngle);
+        intent.putExtra("Velocity", valueVelocity);
+        intent.putExtra("TIME", valueTime);
+        startActivity(intent);
+            }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
